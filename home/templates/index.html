@@ -1,0 +1,636 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content %}
+			<!-- SLIDER-AREA START  -->
+			<section class="slider-area slider-style-2">
+				<div class="bend niceties preview-2">
+					<div id="ensign-nivoslider" class="slides">	
+						<img src="{% static "img/Dolce_1.jpg" %}" alt="" title="#slider-direction-1" style ="width: 100% height: 100%"  />
+						<img src="{% static "img/Dolce_1.jpg" %}" alt="" title="#slider-direction-2"  />
+						<img src="{% static "img/Dolce_1.jpg" %}" alt="" title="#slider-direction-3"  />
+					</div>
+					<!-- direction 1 -->
+					<div id="slider-direction-1" class="t-cn slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb slider-1">
+							<div class="title-container s-tb-c title-compress">
+								<div class="layer-1">
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
+										<h3 class="slider-title3 text-uppercase mb-0" >welcome to our</h3>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
+										<h2 class="slider-title1 text-uppercase mb-0"><span class="hidden-xs">elegent </span>  furniture</h2>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="3s" data-wow-delay="0.5s">
+										<h2 class="slider-title2 text-uppercase" >gallery 2016</h2>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="3.5s" data-wow-delay="0.5s">
+										<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<!-- direction 2 -->
+					<div id="slider-direction-2" class="slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb slider-1">
+							<div class="title-container s-tb-c title-compress">
+								<div class="layer-1">
+									<div class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
+										<h3 class="slider-title3 text-uppercase mb-0" >welcome to our</h3>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.5s">
+										<h2 class="slider-title1 text-uppercase"><span class="hidden-xs">elegent </span> furniture</h2>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
+										<p class="slider-pro-brief">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.  If you are going to use a  passage of Lorem Ipsum, you need to be sure there hidden in the middle of text.</p>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
+										<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>		
+					</div>
+					<!-- direction 3 -->
+					<div id="slider-direction-3" class="slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb slider-1">
+							<div class="title-container s-tb-c title-compress">
+								<div class="layer-1">
+									<div class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
+										<h3 class="slider-title3 text-uppercase mb-0" >welcome to our</h3>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.5s">
+										<h2 class="slider-title1 text-uppercase mb-0"><span class="hidden-xs">elegent </span> furniture</h2>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
+										<h2 class="slider-title2 text-uppercase" >gallery 2016</h2>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
+										<p class="slider-pro-brief">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.  If you are going to use a  passage of Lorem Ipsum, you need to be sure there hidden in the middle of text.</p>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="3s" data-wow-delay="0.5s">
+										<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>		
+					</div>
+				</div>
+			</section>
+			<!-- SLIDER-AREA END -->
+			<!-- BANNER-AREA START -->
+			<div class="banner-area pt-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+							<!-- Single-banner start -->
+
+							<!-- Single-banner end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BANNER-AREA END -->
+			<!-- PRODUCT-AREA START -->
+			<div class="product-area pt-80 pb-30 product-style-2">
+				<div class="container">
+					<!-- Section-title start -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="section-title text-center">
+								<h2 class="title-border">Featured Products</h2>
+							</div>
+						</div>
+					</div>
+					<!-- Section-title end -->
+					{#---------------------------------- Featured Products -------------------------------------------------#}
+					<div class="row cus-row-30">
+						<div class="product-slider arrow-left-right">
+							<!-- Single-product start -->
+							{% for f_product in Product %}
+							<div class="col-lg-12">
+								<div class="single-product">
+									<div class="product-img">
+									{% if f_product.choice_field == 'Sale' %}
+										<span class="pro-label sale-label">{{ f_product.choice_field}}</span>
+									{% endif %}
+										<span class="pro-price-2">{{ f_product.price }}원</span>
+										<a href="{{f_product.get_absolute_url}}"><img src="{{ f_product.photo_set.all.0.image.url }}" alt="" /></a>
+									</div>
+									<div class="product-info clearfix text-center">
+										<div class="fix">
+											<h4 class="post-title"><a href="{{f_product.get_absolute_url}}">{{ f_product.title|safe }}</a></h4>
+										</div>
+										<div class="product-action clearfix">
+											<a href="#" data-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+											<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+											<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+											<a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single-product end -->
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- PRODUCT-AREA END -->
+			<!-- DISCOUNT-PRODUCT START -->
+			{#---------------------------------- discount -------------------------------------------------#}
+			<div class="discount-product-area discount-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+							<div class="row">
+								<div class="discount-product-slider dots-bottom-right">
+									<!-- single-discount-product start -->
+									{% for dis in Discount %}
+									<div class="col-lg-12">
+										<div class="discount-product">
+											<div class="row">
+												<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+													<a href="{{dis.get_absolute_url}}">
+														<img src="{{ dis.photo_set.all.0.image.url }}" alt="" />
+												    </a>
+												</div>
+												<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+													<div class="discount-info"> 
+														<h1 class="text-dark-red">Discount{{ dis.discount_percent }}%</h1>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore labore et labore et dolore magna aliqua. Ut enim ad minim venim.</p>
+														<a class="button-2 text-dark-red text-uppercase" href="{{dis.get_absolute_url}}">GET DISCOUNT <i class="zmdi zmdi-long-arrow-right"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+									<!-- single-discount-product end -->
+								</div>
+							</div>
+						</div>
+						<!-- up-comming-product start -->
+						{#---------------------------------- time sale  -------------------------------------------------#}
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="up-comming-product">
+								<div class="up-comming-img">
+								{% for time in TimeSale %}
+									<a href="#"><img src="{{ time.image.url }}" alt="" /></a>
+								</div>
+								<div class="up-comming-info text-center">
+									<div class="up-comming-brief">
+										<h4 class="post-title"><a href="#">{{time.title}}</a></h4>
+										<h4 class="comming-pro-price">$ {{time.price}}</h4>
+									</div>
+									<div class="count-down">
+										<div data-countdown="2016/10/08"></div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- up-comming-product end -->
+					</div>
+				</div>
+			</div>
+			<!-- DISCOUNT-PRODUCT END -->
+			<!-- PURCHASE-ONLINE-AREA START -->
+			<div class="purchase-online-area pt-80 product-style-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="section-title text-center">
+								<h2 class="title-border">Purchase Online on Hurst</h2>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12  text-center">
+							<!-- Nav tabs -->
+							<ul class="tab-menu clearfix">
+								<li class="active"><a href="#new-arrivals" data-toggle="tab">New Arrivals</a></li>
+								<li><a href="#best-seller"  data-toggle="tab">Best Seller </a></li>
+								<li><a href="#most-view" data-toggle="tab">Most View </a></li>
+								<li><a href="#discounts" data-toggle="tab">Discounts</a></li>
+							</ul>
+						</div>	
+						<div class="col-lg-12">
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="new-arrivals">
+									<div class="row">
+									{#---------------------------------- new arrival -------------------------------------------------#}
+									{% for f_product in Product %}
+										<!-- Single-product start -->
+										<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+											<div class="single-product">
+												<div class="product-img">
+													<span class="pro-label new-label">new</span>
+													<span class="pro-price-2">{{ f_product.price }}</span>
+													<a href="single-product.html"><img src="{{ f_product.photo_set.all.0.image.url }}" alt="" /></a>
+												</div>
+												<div class="product-info clearfix text-center">
+													<div class="fix">
+														<h4 class="post-title"><a href="#">{{ f_product.title }}</a></h4>
+													</div>
+													<div class="fix">
+														<span class="pro-rating">
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+														</span>
+													</div>
+													<div class="product-action clearfix">
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- Single-product end -->
+									</div>
+								</div>
+								{#---------------------------------- best seller -------------------------------------------------#}
+								<div class="tab-pane" id="best-seller">
+									<div class="row">
+										<!-- Single-product start -->
+										<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+											<div class="single-product">
+												<div class="product-img">
+													<span class="pro-label new-label">new</span>
+													<span class="pro-price-2">$ 56.20</span>
+													<a href="single-product.html"><img src="img/product/8.jpg" alt="" /></a>
+												</div>
+												<div class="product-info clearfix text-center">
+													<div class="fix">
+														<h4 class="post-title"><a href="#">dummy Product name</a></h4>
+													</div>
+													<div class="fix">
+														<span class="pro-rating">
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+														</span>
+													</div>
+													<div class="product-action clearfix">
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Single-product end -->
+									</div>
+								</div>
+								{#---------------------------------- most-view -------------------------------------------------#}
+								<div class="tab-pane" id="most-view">
+									<div class="row">
+										<!-- Single-product start -->
+										<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+											<div class="single-product">
+												<div class="product-img">
+													<span class="pro-label new-label">new</span>
+													<span class="pro-price-2">$ 56.20</span>
+													<a href="single-product.html"><img src="img/product/11.jpg" alt="" /></a>
+												</div>
+												<div class="product-info clearfix text-center">
+													<div class="fix">
+														<h4 class="post-title"><a href="#">dummy Product name</a></h4>
+													</div>
+													<div class="fix">
+														<span class="pro-rating">
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+														</span>
+													</div>
+													<div class="product-action clearfix">
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Single-product end -->
+									</div>
+								</div>
+								{#---------------------------------- discounts -------------------------------------------------#}
+								<div class="tab-pane" id="discounts">
+									<div class="row">
+										<!-- Single-product start -->
+										<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+											<div class="single-product">
+												<div class="product-img">
+													<span class="pro-label sale-label">sale</span>
+													<span class="pro-price-2">$ 56.20</span>
+													<a href="single-product.html"><img src="img/product/3.jpg" alt="" /></a>
+												</div>
+												<div class="product-info clearfix text-center">
+													<div class="fix">
+														<h4 class="post-title"><a href="#">dummy Product name</a></h4>
+													</div>
+													<div class="fix">
+														<span class="pro-rating">
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+															<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+														</span>
+													</div>
+													<div class="product-action clearfix">
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Single-product end -->
+									</div>					
+								</div>
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+			<!-- PURCHASE-ONLINE-AREA END -->
+			<!-- BLGO-AREA START -->
+			<div class="blog-area blog-2 pt-50">
+				<div class="container">
+					<!-- Section-title start -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="section-title text-center">
+								<h2 class="title-border">From The Blog</h2>
+							</div>
+						</div>
+					</div>
+					<!-- Section-title end -->
+					<div class="row">
+						<!-- Single-blog start -->
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-blog mt-30">
+								<div class="blog-photo">
+									<a href="#"><img src="img/blog/3.jpg" alt="" /></a>
+									<div class="like-share text-center fix">
+										<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+										<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+										<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+									</div>
+								</div>
+								<div class="blog-info"> 
+									<div class="post-meta fix">
+										<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+										<div class="post-year floatleft">
+											<p class="text-uppercase text-dark-red mb-0">June, 2016</p>
+											<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2016</a></h4>
+										</div>
+									</div>
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+									<a href="#" class="button-2 text-dark-red">Read more...</a>
+								</div>
+							</div>
+						</div>
+						<!-- Single-blog end -->
+						<!-- Single-blog start -->
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-blog mt-30">
+								<div class="blog-photo">
+									<a href="#"><img src="img/blog/4.jpg" alt="" /></a>
+									<div class="like-share text-center fix">
+										<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+										<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+										<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+									</div>
+								</div>
+								<div class="blog-info"> 
+									<div class="post-meta fix">
+										<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+										<div class="post-year floatleft">
+											<p class="text-uppercase text-dark-red mb-0">June, 2016</p>
+											<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2016</a></h4>
+										</div>
+									</div>
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+									<a href="#" class="button-2 text-dark-red">Read more...</a>
+								</div>
+							</div>
+						</div>
+						<!-- Single-blog end -->
+						<!-- Single-blog start -->
+						<div class="col-lg-4 col-md-4 hidden-sm col-xs-12">
+							<div class="single-blog mt-30">
+								<div class="blog-photo">
+									<a href="#"><img src="img/blog/5.jpg" alt="" /></a>
+									<div class="like-share text-center fix">
+										<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+										<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+										<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+									</div>
+								</div>
+								<div class="blog-info"> 
+									<div class="post-meta fix">
+										<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+										<div class="post-year floatleft">
+											<p class="text-uppercase text-dark-red mb-0">June, 2016</p>
+											<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2016</a></h4>
+										</div>
+									</div>
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+									<a href="#" class="button-2 text-dark-red">Read more...</a>
+								</div>
+							</div>
+						</div>
+						<!-- Single-blog end -->
+					</div>
+				</div>
+			</div>
+			<!-- BLGO-AREA END -->
+			<!-- BRAND-LOGO-AREA START -->
+			<div class="brand-logo-area pt-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="brand">
+								<div class="brand-slider">
+									<div class="single-brand">
+										<a href="https://themeforest.net/user/bootexperts/portfolio" target="_blank"><img src="img/brand/1.png" alt="" /></a>
+									</div>
+									<div class="single-brand">
+										<a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank"><img src="img/brand/2.png" alt="" /></a>
+									</div>
+									<div class="single-brand">
+										<a href="https://themeforest.net/user/devitems/portfolio" target="_blank"><img src="img/brand/3.png" alt="" /></a>
+									</div>
+									<div class="single-brand">
+										<a href="https://themeforest.net/user/hastech/portfolio" target="_blank"><img src="img/brand/4.png" alt="" /></a>
+									</div>
+									<div class="single-brand">
+										<a href="http://psdrightsell.com/" target="_blank"><img src="img/brand/5.png" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BRAND-LOGO-AREA END -->
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>012345 - 123456789</li>
+										<li><span>Email :</span>your-email@gmail.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">shipping</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Email Newsletters</h3>
+									<div class="footer-subscribe">
+										<form action="#">
+											<input type="text" name="email" placeholder="Email Address..." />
+											<button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">&copy; <a href="http://themeforest.net/user/codecarnival#contact" target="_blank">CodeCarnival </a> 2016. All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="payment  text-right">
+									<a href="#"><img src="img/payment/1.png" alt="" /></a>
+									<a href="#"><img src="img/payment/2.png" alt="" /></a>
+									<a href="#"><img src="img/payment/3.png" alt="" /></a>
+									<a href="#"><img src="img/payment/4.png" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			<!-- QUICKVIEW PRODUCT -->
+			<div id="quickview-wrapper">
+			   <!-- Modal -->
+			   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<div class="modal-product">
+									<div class="product-images">
+										<div class="main-image images">
+											<img alt="#" src="#"/>
+										</div>
+									</div><!-- .product-images -->
+
+									<div class="product-info">
+										<h1>Aenean eu tristique</h1>
+										<div class="price-box-3">
+											<hr />
+											<div class="s-price-box">
+												<span class="new-price">$158.00</span>
+												<span class="old-price">$190.00</span>
+											</div>
+											<hr />
+										</div>
+										<a href="shop.html" class="see-all">See all features</a>
+										<div class="quick-add-to-cart">
+											<form method="post" class="cart">
+												<div class="numbers-row">
+													<input type="number" id="french-hens" value="3">
+												</div>
+												<button class="single_add_to_cart_button" type="submit">Add to cart</button>
+											</form>
+										</div>
+										<div class="quick-desc">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+										</div>
+										<div class="social-sharing">
+											<div class="widget widget_socialsharing_widget">
+												<h3 class="widget-title-modal">Share this product</h3>
+												<ul class="social-icons">
+													<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
+													<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
+													<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
+													<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div><!-- .product-info -->
+								</div><!-- .modal-product -->
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->
+			   </div>
+			   <!-- END Modal -->
+			</div>
+			<!-- END QUICKVIEW PRODUCT -->	
+			
+		</div>
+	{% endblock %}
