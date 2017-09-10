@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
-
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Product(models.Model):
@@ -67,19 +67,17 @@ def get_upload_path(instance, filename):
 
 class Photo(models.Model):
     product = models.ForeignKey(Product, null=True)
-    image = models.ImageField(upload_to=get_upload_path,
+    image = models.ImageField(upload_to= get_upload_path,
                               verbose_name='Image', )
 
 class Size(models.Model):
     product = models.ForeignKey(Product, null=True)
     S_size = models.IntegerField()
-"""
-class User(models.Model) :
-    name = models.CharField(max_length= 20, null=False, blank=False, help_text="이름을 입력하세요")
-    password = models.CharField(max_length= 20,null=False, blank=False, help_text="최소8자 이상이어야합니다. ")
-    email = models.CharField(max_length= 30, unique=True, null=False, blank=False, help_text="e-mail을 입력하세요") # id
-    birthday = models.IntegerField()
-    phone_number = models.IntegerField()
+
+class CustomUser(models.Model) :
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birthday = models.DateTimeField()
+    phone_number = PhoneNumberField()
     address = models.CharField(max_length= 150, null=False, blank=True, help_text="주소를 입력하세요")
     sex = models.BooleanField()
-"""
+

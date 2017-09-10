@@ -6,12 +6,18 @@ from django.views.generic.base import TemplateView
 from home.models import Product, Photo
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from home.form import ProductForm
+from home.form import ProductForm, CustomUserForm
 
+"""
 class UserCreateView(CreateView) :
-    template_name = 'login.html'
-    form_class = UserCreationForm
+    template_name = 'register.html'
+    form_class = CustomUserForm
     success_url = reverse_lazy('register_done')
+"""
+def UserCreateView(request):
+   if request.method = 'POST':
+       user_form = 
+   return render()
 
 class UserCreateDoneTV(TemplateView) :
     template_name = 'login.html'

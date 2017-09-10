@@ -27,8 +27,8 @@
 } */
 .nivoSlider {
 	position:relative;
-	width:100%;
-	height:auto;
+	width:50%;
+	height:50%;
 	overflow: hidden;
 }
 .nivoSlider img {

@@ -18,7 +18,7 @@ from django.contrib import admin
 from home.views import *
 from django.conf.urls.static import static, serve
 from django.conf import settings
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_view
 
 if settings.DEBUG:
     import debug_toolbar
@@ -26,7 +26,9 @@ if settings.DEBUG:
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
         url(r'^accounts/', include('django.contrib.auth.urls'),),
-        url(r'^accounts/register/$', auth_views.LoginView.as_view(template_name = 'login.html'), name='register'),
+        url(r'^accounts/login/$', auth_view.LoginView.as_view(template_name="index.html"),name='login'),
+        #url(r'^accounts/login/$', auth_view.login, name = "login"),
+        url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
         url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
         url(r'^admin/', admin.site.urls),
         url(r'^home/', HomeView, name='home'),

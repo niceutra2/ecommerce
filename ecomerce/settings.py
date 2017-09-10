@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'debug_toolbar',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #LOGIN_URL = '/accounts/login/'
 #LOGOUT_URL = '/accounts/logout/'
-LOGIN_REDIRECT_URL = '/account/profile'
+LOGIN_REDIRECT_URL = 'home'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
