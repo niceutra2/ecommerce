@@ -89,41 +89,49 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
+            name=name,
+            password=password,
             date_of_birth=date_of_birth,
+            phone_number=phone_number,
+            address=address
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password):
+    def create_superuser(self, email, name, date_of_birth, password, address, phone_number):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
-            email,
+            email=email,
+            name=name,
             password=password,
             date_of_birth=date_of_birth,
+            phone_number=phone_number,
+            address=address
         )
         user.is_admin = True
         user.save(using=self._db)
         return user
 
 class CustomUser(AbstractBaseUser,  PermissionsMixin) :
+    object = MyUserManager()
     email = models.EmailField(verbose_name='email', max_length=128, blank=False, unique =True)
     name = models.CharField(verbose_name='name', max_length=256, blank=True)
     date_of_birth = models.DateTimeField()
-    phone_number = PhoneNumberField()
+    phone_number = PhoneNumberField(help_text="+8210XXXXXXXX")
     address = models.CharField(max_length=150, null=False, blank=True, help_text="주소를 입력하세요")
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD ='email'
     REQUIRED_FIELDS = [
-        'email',
         'phone_number',
-        'birthday',
+        'date_of_birth',
         'address',
+        'name'
     ]
 
     is_active = models.BooleanField(default=True)

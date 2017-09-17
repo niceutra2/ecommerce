@@ -1,3 +1,4 @@
+from django.contrib.auth import login, authenticate
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse_lazy
@@ -15,9 +16,19 @@ class UserCreateView(CreateView) :
     success_url = reverse_lazy('register_done')
 """
 def UserCreateView(request):
-   if request.method = 'POST':
-       user_form = 
-   return render()
+    if request.method == 'POST':
+        form = CustomUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        print ("aaaa")
+        form = CustomUserForm()
+    return render(request, 'register.html', {'form':form})
 
 class UserCreateDoneTV(TemplateView) :
     template_name = 'login.html'

@@ -28,7 +28,7 @@ if settings.DEBUG:
         url(r'^accounts/', include('django.contrib.auth.urls'),),
         url(r'^accounts/login/$', auth_view.LoginView.as_view(template_name="index.html"),name='login'),
         #url(r'^accounts/login/$', auth_view.login, name = "login"),
-        url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+        url(r'^accounts/register/$', UserCreateView, name='register'),
         url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
         url(r'^admin/', admin.site.urls),
         url(r'^home/', HomeView, name='home'),
