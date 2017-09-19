@@ -5,8 +5,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic.base import TemplateView
 
 from home.models import Product, Photo
-from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
-from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from home.form import ProductForm, CustomUserForm
 
 """
@@ -20,13 +19,16 @@ def UserCreateView(request):
         form = CustomUserForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
+            username = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+            else:
+                print("invalid login")
+                #return redirect('error page')
             return redirect('home')
     else:
-        print ("aaaa")
         form = CustomUserForm()
     return render(request, 'register.html', {'form':form})
 

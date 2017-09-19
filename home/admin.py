@@ -3,7 +3,14 @@ from django.contrib import admin
 from home.models import Product, Photo, CustomUser
 from django.contrib.auth.admin import UserAdmin
 
-#admin.site.register(CustomUser, UserAdmin)
+
+class UserInline(admin.StackedInline):
+    model = CustomUser
+    fields = ('username', 'email', 'first_name', 'last_name')
+class UserAdmin(UserAdmin):
+    inlines = [
+        UserInline
+    ]
 
 # Register your models here.
 class PhotoInline(admin.StackedInline):
@@ -16,5 +23,5 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
     inlines = [PhotoInline]
 
-
+admin.site.register(CustomUser, UserAdmin)
 admin.site.register(Product, ProductAdmin)
